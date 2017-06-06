@@ -5,7 +5,7 @@ CC=$(CROSS_COMPILE)gcc
 
 obj-m += simple.o
 
-KDIR  := ~/Documents/school/master/semester_3/LEO2/device_driver/linux-xlnx-zynmp-dt-fixes-for-4.10
+KDIR  := ../../linux-xlnx-zynmp-dt-fixes-for-4.10
 PWD		:= $(shell pwd)
 
 default:
