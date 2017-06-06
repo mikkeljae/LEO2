@@ -1,0 +1,2 @@
+# Developing a Simple Device Driver for a Zynq Platform
+In this guide the steps required to create a simple device driver are explained. A device will be created such that any data written to that device will be logged in the kernel log. Along the way, the concepts of device drivers in general will be explained to provide the reader of a good understanding of the process of writing a device driver.
