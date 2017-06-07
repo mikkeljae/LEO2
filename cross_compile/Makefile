@@ -7,7 +7,7 @@ KDIR  := ~/Documents/school/master/semester_3/LEO2/device_driver/linux-xlnx-zynm
 PWD		:= $(shell pwd)
 
 default:
-	$(MAKE) -C $(KDIR) -I$(KDIR)/include M=$(PWD) modulesd
+	$(MAKE) -C $(KDIR) -I$(KDIR)/include M=$(PWD) modules
 
 clean:
 	rm -rf *.o *.mod.* *.symvers *.order *~ *.cmd .tmp*
