@@ -82,4 +82,9 @@ sudo rm hello
 modinfo hello.ko
 ```
 
-#### Some kind of ending
+#### 5. Transferring the Kernel Module
+The kernel module needs to be transferred to the target. This can be done using `scp`, which a secure way of transferring files based on `ssh`:
+
+```bash
+scp simple.ko <user>@192.168.10.1:~/<path>
+```
