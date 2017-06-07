@@ -46,7 +46,7 @@ MODULE_AUTHOR("Mikkel and Thomas");
 MODULE_DESCRIPTION("A very simple Linux device driver.");
 MODULE_VERSION("0.1");
 ```
-Information about the kernel module. License type affects runtime behavior as any module loaded with a non-GPL-compatible license will mark the kernel as tainted.
+Information about the kernel module. Usually the license should be GPL-compatible. If it is not, the kernel will be marked as tainted. This will often happen due to using proprietary drivers or similar software not supported by the community. Some software in the kernel may disable features if the kernel is marked as tainted. 
 ```C
 static int __init hello_init(void){
    printk(KERN_INFO "Hello World!, from your device.\n");
@@ -57,12 +57,14 @@ static void __exit hello_exit(void){
    printk(KERN_INFO "Goodbye World!, from your device.\n");
 }
 ```
-The kernel module initialization and cleanup functions writes to the kernel log.
+The kernel defines an API that any kernel module should adhere to. This includes the kernel module initialization and cleanup functions. In this simple kernel module, all they do is write to the kernel log.
 ```C
 module_init(hello_init);
 module_exit(hello_exit);
 ```
-The macros are used to identify the initialization and cleanup functions. The actual names of the functions does not matter. 
+These two macros are used to identify the initialization and cleanup functions. The actual names of the functions does not matter. 
+
+With a kernel module in hand, it is now time to get it built!
 
 ### 3. Setting up the Environment
 This guide assumes that a working installation of Vivado 2016.4 or later is installed on the host machine. Xilinx provides a number of compilers with the Vivado installation. Which one to use depends on the platform to be compiled for. In the case of the Linux environment for the [MicroZed](https://github.com/SDU-Embedded/linux_zynq/wiki/Installing-Linux-on-the-MicroZed) or [Zybo](https://github.com/SDU-Embedded/linux_zynq/wiki/Installing-Linux-on-the-ZYBO) available here at SDU-Embedded, `arm-linux-gnueabihf-gcc` should be used. In order to access this, source the following in a terminal:
