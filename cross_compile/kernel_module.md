@@ -160,7 +160,7 @@ sudo rm simple
 modinfo simple.ko
 ```
 
-You should now be ready to develop your on device drivers for the Zynq 7000 Series Platform. Have fun :)
+You should now be ready to develop your own device drivers for the Zynq 7000 Series Platform. Have fun :)
 
 
 ***
