@@ -3,10 +3,10 @@ Cross compiling kernel modules is somewhat different to cross compiling user spa
 ### 1. Prerequisites
 * Kernel is built as described [here](https://github.com/SDU-Embedded/linux_zynq/wiki/Installing-Linux-on-the-ZYBO). Only steps 3 and 6 are required, but it is not possible to test the module without a working installation of the kernel.
 
-## A Simple Device Driver
+
+### 2. A Simple Device Driver
 This simple device driver does nothing more than write a line to the kernel log when inserted and removed from the kernel. 
 
-### 2. The Code
 ```C
 #include <linux/init.h>
 #include <linux/module.h>
@@ -158,3 +158,14 @@ sudo rm simple
 `modinfo` can be used to show information about a kernel module.
 ```bash
 modinfo simple.ko
+```
+
+You should now be ready to develop your on device drivers for the Zynq 7000 Series Platform. Have fun :)
+
+
+***
+Maintainers: 
+
+Thomas Søndergaard Christensen <thomc12@student.sdu.dk> 
+
+Mikkel Skaarup Jaedicke <mijae12@student.sdu.dk>
