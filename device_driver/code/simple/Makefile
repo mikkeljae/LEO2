@@ -5,8 +5,8 @@ CC=$(CROSS_COMPILE)gcc
 
 obj-m += simple.o
 
-KDIR  := ../../linux_header
-PWD		:= $(shell pwd)
+KDIR  := ../../linux-xlnx-zynmp-dt-fixes-for-4.10
+WD	  := $(shell pwd)
 
 default:
 	${MAKE} -C ${KDIR} M=${PWD} modules
